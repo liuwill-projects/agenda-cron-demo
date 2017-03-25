@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "babel-node lib/index.js --presets es2015,stage-2",
     "start": "babel-node lib/index.js --presets es2015,stage-2",
-    "local": "export MONGO_ENV=local && babel-node lib/index.js --presets es2015,stage-2",
+    "local": "cross-env MONGO_ENV=local && babel-node lib/index.js --presets es2015,stage-2",
     "test": "./node_modules/.bin/mocha ./test"
   },
   "author": "liuwill",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "chai": "^3.5.0",
+    "cross-env": "^3.2.4",
     "mocha": "^3.2.0"
   }
 }
