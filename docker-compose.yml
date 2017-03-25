@@ -1,0 +1,20 @@
+version: '2'
+services:
+  agenda-mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  
+  #Run tests in Docker `docker-compose up` on Node.js v4
+  #- install node deps first `docker-compose run agenda npm install`
+  agenda:
+    image: nodesource/jessie:4
+    command: make dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      - MONGODB_HOST=agenda-mongo
+    links:
+      - agenda-mongo
