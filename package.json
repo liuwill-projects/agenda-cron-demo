@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "prod": "babel-node lib/index.js --presets es2015,stage-2",
-    "start": "export MONGO_ENV=local && babel-node lib/index.js --presets es2015,stage-2",
+    "start": "babel-node lib/index.js --presets es2015,stage-2",
+    "local": "export MONGO_ENV=local && babel-node lib/index.js --presets es2015,stage-2",
     "test": "./node_modules/.bin/mocha ./test"
   },
   "author": "liuwill",
