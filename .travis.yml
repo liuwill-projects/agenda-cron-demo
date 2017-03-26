@@ -1,11 +1,12 @@
 language: node_js
 node_js:
   - "7.6.0"
-services:
-  - mongodb
 before_script:
-  - sleep 15
-  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+  - echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+  - sudo apt-get update
+  - sudo apt-get install -y mongodb-org
+  - 'until nc -z 127.0.0.1 27017 ; do echo Waiting for MongoDB; sleep 1; done'
 install:
   - npm install
 script:
