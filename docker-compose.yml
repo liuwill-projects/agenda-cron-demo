@@ -8,8 +8,8 @@ services:
   #Run tests in Docker `docker-compose up` on Node.js v4
   #- install node deps first `docker-compose run agenda npm install`
   agenda:
+    #build: .
     image: nodesource/jessie:6.3.0
-    #image: node/7.8.0
     command: make dev
     ports:
       - "8080:8080"
