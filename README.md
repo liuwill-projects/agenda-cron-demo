@@ -15,3 +15,10 @@ npm install
 npm test
 npm start
 ```
+
+如果使用`docker-compose up`运行的话，访问agendash需要http验证，可以通过下面的命令自己设置用户名密码。
+
+```shell
+docker-compose config
+AUTH_USER_NAME=name AUTH_PASSWORD=pass docker-compose up
+```

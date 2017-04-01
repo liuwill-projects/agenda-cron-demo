@@ -18,5 +18,7 @@ services:
     environment:
       - MONGODB_HOST=agenda-mongo
       - HTTP_AUTH_MODE=basic
+      - AUTH_USER_NAME=${AUTH_USER_NAME}
+      - AUTH_PASSWORD=${AUTH_PASSWORD}
     links:
       - agenda-mongo
