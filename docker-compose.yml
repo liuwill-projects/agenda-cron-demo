@@ -17,5 +17,6 @@ services:
       - ./:/usr/src/app
     environment:
       - MONGODB_HOST=agenda-mongo
+      - HTTP_AUTH_MODE=basic
     links:
       - agenda-mongo
