@@ -21,4 +21,10 @@ npm start
 ```shell
 docker-compose config
 AUTH_USER_NAME=name AUTH_PASSWORD=pass docker-compose up
+
+#或者
+echo -e "AUTH_USER_NAME=username\n\
+AUTH_PASSWORD=password" > .env
+docker-compose config
+docker-compose up
 ```
