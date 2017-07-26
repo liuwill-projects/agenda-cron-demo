@@ -35,6 +35,17 @@ describe('GET /user', function () {
   });
 });
 
+describe('GET /api/user/:id', function () {
+  it('should respond router path', function (done) {
+    request(app).get('/api/user/0')
+      .expect(200)
+      .end(function (err, res) {
+        expect(err).to.be.null
+        done()
+      });
+  });
+});
+
 describe('GET /agendash/api', function () {
   it('should return the correct overview', function (done) {
     request(app).get('/agendash/api')
